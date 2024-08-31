@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.items-click {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+main {
+    padding: 20px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-category img {
+    width: 50px;
+    height: 50px; 
+}
+.button-container {
+    margin-top: 10px;
+}
+.delete-btn, .edit-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px;
+}
+.edit-btn {
+    background-color: orange;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+.edit-btn:hover {
+    background-color: darkorange;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Estilo para quitar la línea azul debajo de los enlaces */
+.grid-item a {
+    text-decoration: none;
+    color: inherit; /* Mantiene el color del texto */
+}
+/*estilos para el icono menu*/
+.profile-container {
+    background-color: transparent;
+    color: white;
+    width: 50px;
+    position: relative;
+    top: -57px; 
+    left: 88%; 
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .avatar {
+    background-color: #000000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px; 
+    font-size: large;
+    cursor: pointer; 
+    margin-bottom: 0px;
+  }
+  .avatar2 {
+    background-color: #000000;
+    top: -100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px; 
+    font-size: large;
+    cursor: pointer; 
+    margin-bottom: 0px;
+  }
+  .hidden-content {
+    display: none; /* Oculto por defecto */
+    margin-top: 10px; /* Espaciado desde el avatar */
+    position: absolute;
+    background: linear-gradient(to bottom, white, #0077cc);
+    left: -5%;
+    border-radius: 15px;
+    padding: 50px;
+    margin: -15px;
+  }
+  .hidden-content button {
+    
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+  .hidden-content button:hover {
+    background-color: #155ab6;
+  }

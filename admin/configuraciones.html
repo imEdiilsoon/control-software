@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Gimnasio</title>
+    
+</head>
+<body>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el header esté siempre por encima */
+}
+
+main {
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 6rem; /* Ajusta este valor según sea necesario */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+section {
+    background-color: #fff;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 95%;
+    padding: 1rem 0.5rem 0.5rem 0.5rem; /* Ajusta el padding para evitar solapamientos */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem; /* Ajusta la posición inicial del label */
+    left: 0.5rem;
+    background-color: #fff;
+    padding: 0 0.25rem;
+    color: #999;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -0.75rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #333;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+    </style>
+    <header>
+        <h1>Configuraciones</h1>
+    </header>
+    <main>
+        <section id="info-basica">
+            <h2>Información Básica</h2>
+            <form id="basic-info-form">
+                <div class="form-group">
+                    <input type="text" id="gym-name" name="gym-name" placeholder=" " required>
+                    <label for="gym-name">Nombre del Gimnasio</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="location" name="location" placeholder=" " required>
+                    <label for="location">Ubicación</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="contact" name="contact" placeholder=" " required>
+                    <label for="contact">Contacto</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="webside" name="webside" placeholder=" " required>
+                    <label for="webside">Sitio Web</label>
+                </div>
+                <button type="button" onclick="saveBasicInfo()">Guardar</button>
+            </form>
+        </section>
+        
+        
+        
+        <section id="descripcion">
+            <h2>Descripción del Gimnasio</h2>
+            <p>Agrega una breve descripción de tu negocio</p>
+            <br>
+            <div class="form-group">
+                <textarea id="description" name="description" rows="4" cols="50" placeholder=" " required></textarea>
+                <label for="description">Descripción</label>
+            </div>
+            <button type="button" onclick="saveDescription()">Guardar</button>
+        </section>
+        
+        
+        <section id="horarios">
+            <h2>Horarios de Apertura</h2>
+            <form id="schedule-form">
+                <div class="form-group">
+                    <input type="time" id="lunes" name="lunes" placeholder=" " required>
+                    <label for="lunes">Lunes</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="martes" name="martes" placeholder=" " required>
+                    <label for="martes">Martes</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="miercoles" name="miercoles" placeholder=" " required>
+                    <label for="miercoles">Miércoles</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="Jueves" name="Jueves" placeholder=" " required>
+                    <label for="Jueves">Jueves</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="viernes" name="viernes" placeholder=" " required>
+                    <label for="viernes">Viernes</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="sabado" name="sabado" placeholder=" " required>
+                    <label for="sabado">Sábado</label>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="domingo" name="domingo" placeholder=" " required>
+                    <label for="domingo">Domingo</label>
+                </div>
+                <button type="button" onclick="saveSchedule()">Guardar</button>
+            </form>
+        </section>
+        
+    </main>
+    <script>
+        function saveBasicInfo() {
+    const gymName = document.getElementById('gym-name').value;
+    const location = document.getElementById('location').value;
+    const contact = document.getElementById('contact').value;
+    console.log('Información Básica Guardada:', { gymName, location, contact });
+}
+
+function saveDescription() {
+    const description = document.getElementById('description').value;
+    console.log('Descripción Guardada:', description);
+}
+
+function saveSchedule() {
+    const monday = document.getElementById('monday').value;
+    const tuesday = document.getElementById('tuesday').value;
+    console.log('Horarios Guardados:', { monday, tuesday });
+}
+
+    </script>
+</body>
+</html>

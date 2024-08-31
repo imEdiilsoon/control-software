@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Reservas</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="reserva.html">Reservas</a></li>
+                <li><a href="inventario.php">Inventario</a></li>
+                <li><a href="membresia.php">Membresías</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Hacer una Reserva</h2>
+        <form action="reservations.php" method="post">
+            <label for="user_id">ID de Usuario:</label>
+            <input type="text" id="user_id" name="user_id" required>
+            <label for="class_name">Nombre de la Clase:</label>
+            <input type="text" id="class_name" name="class_name" required>
+            <label for="reservation_date">Fecha de la Reserva:</label>
+            <input type="date" id="reservation_date" name="reservation_date" required>
+            <button type="submit">Reservar</button>
+        </form>
+    </main>
+</body>
+</html>

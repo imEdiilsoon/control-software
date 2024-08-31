@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+
+.header {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+main {
+    padding: 20px;
+}
+/* Estilos adicionales para la página de membresías */
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0077cc;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005fa3;
+}
+/* Estilos adicionales para la página de inventario */
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0077cc;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005fa3;
+}
+
+.toggle-password {
+    color: gray;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.notificacion-exito {
+    background-color: rgb(111, 255, 111);
+    color: rgb(0, 80, 0);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: .90;
+    font-weight: 700;
+    height: 60px;
+    animation: desaparecer 5s linear;
+}
+
+.notificacion-error{
+    background-color: rgb(255, 109, 109);
+    color: rgb(134, 0, 0);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: .90;
+    font-weight: 700;
+    height: 60px;
+    animation: desaparecer 3s;
+}
+
+@keyframes desaparecer {
+    0% {opacity: 1%; left: -100px;}
+    100% {opacity: 100%; left: 20px;}
+}
+
+

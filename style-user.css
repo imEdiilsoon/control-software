@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+
+}
+main {
+    padding: 20px;
+}
+/* Estilos adicionales para la página de membresías */
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0077cc;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005fa3;
+}
+/* Estilos adicionales para la página de inventario */
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0077cc;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #005fa3;
+}
+
+
+/* estilos para la reserva*/
+.header-reserva {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    
+    }
+    /*estilos para el icono menu*/
+    .profile-container {
+        background-color: transparent;
+        color: white;
+        width: 50px;
+        position: absolute; /* Cambia la posición del contenedor */
+        top: 20px; /* Ajusta la distancia desde la parte superior */
+        left: 90%; /* Ajusta la distancia desde la parte izquierda */
+        border-radius: 10px;
+        padding: 10px;
+        
+       
+      }
+      .container-avatar{
+        border: #b0b0b0;
+      }
+      .avatar {
+        background-color: #000000;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px; 
+        font-size: large;
+        cursor: pointer; 
+        margin-bottom: 5px;
+      }
+    
+      .profile-info {
+        margin-bottom: 20px;
+      }
+    
+      .profile-info h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+    
+      .profile-info p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        color: #b0b0b0;
+      }
+    
+      .hidden-content {
+        display: none; /* Oculto por defecto */
+        margin-top: 10px; /* Espaciado desde el avatar */
+        position: absolute;
+        background-color: rgb(214, 214, 214);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }  
+      .hidden-content button {
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        padding: 0px;
+        border-radius: 50;
+        cursor: pointer;
+      }
+    
+      .hidden-content button:hover {
+        background-color: #155ab6;
+      }

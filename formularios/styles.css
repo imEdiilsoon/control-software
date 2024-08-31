@@ -1,0 +1,114 @@
+/* Estilos generales */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Estilos para los formularios */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-select {
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Estilos para inputs de error */
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.form-control.is-invalid:focus, .form-select.is-invalid:focus {
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 576px) {
+    form {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+    }
+}
+
+
+.notificacion-exito {
+    background-color: rgb(111, 255, 111);
+    color: rgb(0, 80, 0);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: .90;
+    font-weight: 700;
+    height: 60px;
+    animation: desaparecer 5s linear;
+}
+
+.notificacion-error{
+    background-color: rgb(255, 109, 109);
+    color: rgb(134, 0, 0);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: .90;
+    font-weight: 700;
+    height: 60px;
+    animation: desaparecer 3s;
+}
+
+@keyframes desaparecer {
+    0% {opacity: 1%; left: -100px;}
+    100% {opacity: 100%; left: 20px;}
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+}

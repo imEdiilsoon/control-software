@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Suscripción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0077cc;
+    color: white;
+}
+
+.pricing {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.easy {
+    border-top: 20px solid #0077cc;
+}
+
+.vip {
+    border-top: 20px solid #0077cc;
+}
+
+.vip-anual {
+    border-top: 20px solid #FFD700;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 20px;
+}
+
+#testimonial-container {
+    margin-top: 20px;
+}
+
+    </style>
+    <header>
+        <h1>NUESTROS PLANES</h1>
+        <p>Los Mejores precios del mercado</p>
+    </header>
+    <main>
+        <section class="pricing">
+            <div class="card easy">
+                <h2>Basico</h2>
+                <p>Cobro mensual</p>
+                <p>$ 65.000 /Mes</p>
+                <button>Comprar mes</button>
+                <ul>
+                    <li>+ Máquinas de musculación y cardio</li>
+                    <li>+ Cinema Cardio</li>
+                    <li>+ Zana funcional</li>
+                    <li>+ App Athletic Rutinas</li>
+                </ul>
+            </div>
+            <div class="card easy">
+                <h2>Estudiantil</h2>
+                <p>Cobro mensual</p>
+                <p>$ 65.000 /Mes</p>
+                <button>Comprar mes</button>
+                <ul>
+                    <li>+ Máquinas de musculación y cardio</li>
+                    <li>+ Cinema Cardio</li>
+                    <li>+ Zana funcional</li>
+                    <li>+ App Athletic Rutinas</li>
+                </ul>
+            </div>
+            
+            <div class="card vip">
+                <h2>Premium</h2>
+                <p>Cobro mensual</p>
+                <p>$ 75.000 /Mes</p>
+                <button>Comprar mes</button>
+                <ul>
+                    <li>+ Todos los beneficios de Easy</li>
+                    <li>+ Acceso a la zona VIP</li>
+                    <li>+ Acceso a otros gimnasios</li>
+                    <li>+ Entrena gratis con un amigo</li>
+                </ul>
+            </div>
+            <div class="card vip-anual">
+                <h2>VIP ANUAL 13 MESES</h2>
+                <p>Pago único</p>
+                <p>$ 650.000</p>
+                <button>Comprar año</button>
+                <ul>
+                    <li>+ Recibe un mes adicional</li>
+                    <li>+ Todos los beneficios de Easy</li>
+                    <li>+ Acceso a la zona VIP</li>
+                    <li>+ Entrena gratis con un amigo</li>
+                </ul>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>Testimonios</h2>
+            <div id="testimonial-container"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const testimonials = [
+        "¡Excelente servicio y precios!",
+        "Me encanta la variedad de máquinas.",
+        "El acceso a la zona VIP es increíble.",
+        "Entrenar con un amigo es lo mejor."
+    ];
+
+    let currentTestimonial = 0;
+
+    const testimonialContainer = document.getElementById('testimonial-container');
+
+    function showTestimonial() {
+        testimonialContainer.textContent = testimonials[currentTestimonial];
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    }
+
+    setInterval(showTestimonial, 3000);
+    showTestimonial();
+});
+
+    </script>
+</body>
+</html>
