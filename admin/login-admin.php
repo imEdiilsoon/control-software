@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Iniciar Sesión como Administradir</h2>
+        <h2>INICIAR SESION - ADMINISTRADOR</h2>
         <form action="./verificar-admin.php" method="POST">
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo</label>
@@ -19,7 +19,7 @@
                 <label for="contraseña" class="form-label">Contraseña</label>
                 <div class="password-container">
                     <input type="password" class="form-control" id="contraseña" name="contraseña_admin" required>
-                    <button type="button" style="cursor: pointer; margin-top: 10px; border-radius: 10px; border: none;" class="toggle-password" onclick="togglePasswordVisibility()">👁️ Mostrar Contraseña</button>
+                    <button type="button" style="cursor: pointer; margin-top: 10px; border-radius: 10px; border: none;" class="toggle-password" onclick="togglePasswordVisibility()">👁️ </button>
                 </div>
             </div>
             <div class="botones">
@@ -43,10 +43,10 @@
       const passwordIcon = document.querySelector('.toggle-password');
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        passwordIcon.textContent = '🙈 Ocultar Contraseña';
+        passwordIcon.textContent = '🙈 ';
       } else {
         passwordInput.type = 'password';
-        passwordIcon.textContent = '👁️ Mostrar Contraseña';
+        passwordIcon.textContent = '👁️ ';
       }
     }
 </script>
