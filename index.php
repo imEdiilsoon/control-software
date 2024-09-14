@@ -9,7 +9,7 @@
 <body>
     <style>
         body {
-    background: url('background-image.jpg') no-repeat center center fixed;
+    
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -86,6 +86,11 @@ h2 {
     display: inline-block;
     margin-top: 10px;
 }
+img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
 
 .btn-secundary:hover {
     background-color: #5a6268;
@@ -94,6 +99,8 @@ h2 {
     </style>
     <div class="container mt-5">
         <h2>INICIO DE SESION</h2>
+        <img src="img/logo.jpg" alt="">
+        <br>
         <form action="./backend/login/verificar-usuario.php" method="POST" id="loginForm">
             <div class="mb-3">
                 <label for="correo" class="form-label">Usuario</label>
