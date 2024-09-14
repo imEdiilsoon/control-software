@@ -8,8 +8,7 @@
 </head>
 <body>
     <style>
-        body {
-    
+        body {    
     background-size: cover;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -138,36 +137,6 @@ img{
         toggleButton.textContent = '👁️ ';
     }
 }
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita el envío del formulario
-
-    var correo = document.getElementById('correo').value;
-    var contraseña = document.getElementById('contraseña').value;
-
-    // Validación básica
-    if (correo === '' || contraseña === '') {
-        alert('Por favor, complete todos los campos.');
-        return;
-    }
-
-    // Validación de formato de correo
-    var correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!correoRegex.test(correo)) {
-        alert('Por favor, ingrese un correo válido.');
-        return;
-    }
-
-    // Simulación de autenticación
-    if (correo === 'usuario@ejemplo.com' && contraseña === '123456') {
-        alert('Inicio de sesión exitoso');
-        // Redirigir a otra página
-        window.location.href = 'pagina_destino.html';
-    } else {
-        alert('Correo o contraseña incorrectos.');
-    }
-});
-
     </script>
 </body>
 </html>
