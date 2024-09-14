@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="../formularios/styles.css">
 </head>
 <body>
+    <style>
+        img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+    </style>
     <div class="container mt-5">
         <h2>INICIAR SESION - ADMINISTRADOR</h2>
+        <img src="../img/logo.jpg" alt="">
+        <br>
         <form action="./verificar-admin.php" method="POST">
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo</label>
