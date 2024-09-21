@@ -4,19 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-user.css">
 </head>
 <body>
+    
     <header>
         <h1>Inventario</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="reserva.html">Reservas</a></li>
-                <li><a href="inventario.php">Inventario</a></li>
-                <li><a href="membresia.php">Membresías</a></li>
-            </ul>
-        </nav>
+        
     </header>
     <main>
         <h2>Registrar Nuevo Artículo</h2>
@@ -29,8 +23,17 @@
         </form>
 
         <h2>Inventario Existente</h2>
-        <div id="inventory-list">
-            <?php include 'nombre del archivo'; ?>
+        
+        <div>
+        <main>
+        <div class="grid-container">
+        <div class="grid-item add-category">
+        <h3>Articulo 1</h3>
+        <p><img src="" alt="articulo 1" id=""></p>
+        <input type="file" id="imageUpload" style="display: none;">
+      </div>
+      
+  </main>
         </div>
     </main>
 </body>
