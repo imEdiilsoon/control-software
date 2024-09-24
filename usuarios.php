@@ -66,7 +66,7 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
         <p><img src="img/dafault.png" alt="Mi perfil" id="profileImage"></p>
         <input type="file" id="imageUpload" style="display: none;" onchange="changeProfileImage(event)">
       </div>
-      <div class="grid-item add-category" onclick="navigateTo('EditarMembresia.html')">
+      <div class="grid-item add-category" onclick="navigateTo('planes.php')">
         <h3>Mi membresía</h3>
         <p><img src="img/membresia.png" alt="Mi membresía"></p>
       </div>
