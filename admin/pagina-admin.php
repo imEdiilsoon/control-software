@@ -87,7 +87,7 @@
               <h3>ADMINISTRAR PRODUCTOS</h3>
               <p><img src="../img/productos.png" alt="img_user"></p>
             </a>
-            <a href="#" class="grid-item items-click">
+            <a href="./membresia.php" class="grid-item items-click">
               <h3>ADMINISTRAR MEMBRESIAS</h3>
               <p><img src="../img/membresia.png" alt="img_user"></p>
             </a>
