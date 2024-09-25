@@ -86,8 +86,10 @@ ul {
     <header>
         <h1>Nuestras Membresías</h1>
         <p>Adquiere una de nuestras membresías para que puedas disfrutar de los privilegios que estas contienen y poder asistir a nuestras instalaciones.</p>
+        <a style="color: black; text-decoration: none; font-family: system-ui; font-weight: 600;" href="./usuarios.php">Volver a la página anterior.</a>
     </header>
     <main>
+    <div style="display: flex; align-content: center; justify-content: center;">
 
 <?php
 
@@ -139,13 +141,14 @@ if($datos) {
         while ($row = mysqli_fetch_assoc($sql)) {
             echo '
         <section class="pricing">
-            <div class="card vip-anual">
+            <div style="max-width: 300px;" class="card vip-anual">
                 <h2>'.$row['NombreMembresia'].'</h2>
-                <p>Duración '.$row['MesesValidezMembresia'].' Mes(es).</p>
-                <p>$ '.$row['PrecioMembresia'].'</p>
+                <p>Duración de '.$row['MesesValidezMembresia'].' Mes(es).</p>
+                <p>Precio: $ '.number_format($row['PrecioMembresia']).'</p>
                 <button>Adquirir está membresia</button>
-                <ul>
-                    <li>+ '.$row['DescripcionMembresia'].'</li>
+                <hr>
+                <ul">
+                    <li>'.$row['DescripcionMembresia'].'</li>
                 </ul>
             </div>
         </section>';
@@ -154,6 +157,7 @@ if($datos) {
     }
 }
 ?>
+</div>
 <section class="testimonials">
     <h2>¡Anímate a adquirir nuestros planes!</h2>
     <div id="testimonial-container"></div>
