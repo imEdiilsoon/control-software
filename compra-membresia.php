@@ -85,7 +85,15 @@ $cedula = $_SESSION['info']['Cedula'];
     }
     /* Estilos para el formulario de edición */
     .edit-form {
-      text-align: left;
+      background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+    h2{
+      text-align: center;
     }
     .edit-form input, .edit-form select {
       width: calc(100% - 20px);
@@ -192,7 +200,7 @@ $cedula = $_SESSION['info']['Cedula'];
     }
   ?>
     <div class="edit-form" id="editForm">
-      <h3>Confirma tú Información</h3>
+      <h2>Confirma tú Información</h2>
       <form action="" method="post">
         <label for="cedula">Número de Cedula:</label>
         <input disabled type="number" id="cedula" name="cedula" value="<?php echo $datos ['Cedula']; ?>">
