@@ -145,7 +145,7 @@ if($datos) {
                 <h2>'.$row['NombreMembresia'].'</h2>
                 <p>Duración '.$row['MesesValidezMembresia'].' Mes(es).</p>
                 <p>$ '.$row['PrecioMembresia'].'</p>
-                <button>Adquirir está membresia</button>
+                <a style="text-decoration: none; color: red; font-family: system-ui" href="./compra-membresia.php?id='.$row['CodigoMembresia'].'">Adquirir está membresia</a>
                 <ul>
                     <li>+ '.$row['DescripcionMembresia'].'</li>
                 </ul>
