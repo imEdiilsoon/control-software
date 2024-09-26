@@ -37,8 +37,10 @@ include("../backend/conexion.php");
 <header>
         <h1>Listado de Membresias</h1>
         <h3>Bienvenido <?= ucfirst($_SESSION['info']['Nombre']); ?>, Puedes validar y editar la información de las Membresias registradas.</h3>
-        <a styles='color: black; font-family: system-ui; font-weight: 600; text-decoration: none;' href="./pagina-admin.php">Volver a la página principal.</a>
-        
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <a style='color: black; font-family: system-ui; font-weight: 600; text-decoration: none;' href="../formularios/formulario-membresias.php">Registrar una nueva membresia.</a>
+            <a style='color: black; font-family: system-ui; font-weight: 600; text-decoration: none;' href="./pagina-admin.php">Volver a la página principal.</a>
+        </ul>
     </header>
     <!-- Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -80,8 +82,8 @@ include("../backend/conexion.php");
                                 <td>'.$row['PrecioMembresia'].'</td>
                                 <td>'.$row['DescripcionMembresia'].'</td>
                                 <td style="display: flex; flex-direction: column; gap: 1rem; padding: 5px;">
-                                  <a style="text-decoration: none; color: green;" href="editar-usuario.php?id='.$row['CodigoMembresia'].'">Editar</a>
-                                  <a style="text-decoration: none; color: tomato;" href="eliminar-usuario.php?id='.$row['CodigoMembresia'].'">Eliminar</a>
+                                  <a style="text-decoration: none; color: green;" href="editar-membresias.php?id='.$row['CodigoMembresia'].'">Editar</a>
+                                  <a style="text-decoration: none; color: tomato;" href="eliminar-membresia.php?id='.$row['CodigoMembresia'].'">Eliminar</a>
                                 </td>
                                 </tr>
                                 ';
