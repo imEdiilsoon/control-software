@@ -94,7 +94,7 @@
       $descripcion = mysqli_real_escape_string($conexion, (strip_tags($_POST["descripcion"], ENT_QUOTES)));
       $precio = mysqli_real_escape_string($conexion, (strip_tags($_POST["precio"], ENT_QUOTES)));
 
-      $actualizar = mysqli_query($conexion, "UPDATE membresias SET NombreMembresia='$nombre', MesesValidezMembresia='$meses', DescripcionMembresia='$descripcion', PrecioMembresia='$precio'") or die();
+      $actualizar = mysqli_query($conexion, "UPDATE membresias SET NombreMembresia='$nombre', MesesValidezMembresia='$meses', DescripcionMembresia='$descripcion', PrecioMembresia='$precio' WHERE CodigoMembresia = '$id_membresia'") or die();
       if($actualizar){
         header("location: membresia.php");
         echo '<div class="notificacion-exito"><p>La información se edito correctamente.</p></div>';
