@@ -38,12 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         trainerCard.classList.add('trainer-card');
 
         trainerCard.innerHTML = `
-            <img src="${trainer.image}" alt="${trainer.name}">
-            <h2>${trainer.name}</h2>
-            <p><strong>Especialidad:</strong> ${trainer.specialty}</p>
-            <p>${trainer.bio}</p>
-            <button class="contact-btn" onclick="contactTrainer('${trainer.email}')">Contactar</button>
-        `;
+    <img src="${trainer.image}" alt="${trainer.name}">
+    <h2>${trainer.name}</h2>
+    <p><strong>Especialidad:</strong> ${trainer.specialty}</p>
+    <p>${trainer.bio}</p>
+    <button class="contact-btn" onclick="contactTrainer('${trainer.email}')">Contactar</button>
+    <button class="contact-btn" onclick="window.open('https://wa.me/+573116962326?text=Hola%20${trainer.name},%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios.', '_blank')">WhatsApp</button>
+`;
+
 
         trainersSection.appendChild(trainerCard);
     });
