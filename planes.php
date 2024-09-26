@@ -51,7 +51,7 @@ header {
 }
 
 .vip-anual {
-    border-top: 20px solid #FFD700;
+    border-top: 20px solid #0077cc;
 }
 
 button {
@@ -142,6 +142,7 @@ if($datos) {
             <div class="card vip-anual">
                 <h2>'.$row['NombreMembresia'].'</h2>
                 <p>Duración '.$row['MesesValidezMembresia'].' Mes(es).</p>
+                
                 <p>$ '.$row['PrecioMembresia'].'</p>
                 <button>Adquirir está membresia</button>
                 <ul>
