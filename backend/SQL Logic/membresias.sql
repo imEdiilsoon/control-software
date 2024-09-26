@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `membresias`
 --
 
-ALTER TABLE `membresias` (
+CREATE TABLE `membresias` (
   `CodigoMembresia` int(11) NOT NULL,
   `NombreMembresia` varchar(100) NOT NULL,
   `MesesValidezMembresia` int(2) NOT NULL,
