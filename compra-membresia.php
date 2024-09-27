@@ -1,10 +1,24 @@
 <?php
+date_default_timezone_set('America/Bogota');
 
 $id_membresia = $_GET['id'];
 
-$fecha_actual = date("Y-m-d H:i:s");
-$mes_fin = date("m") + 1;
-$fecha_expiración =  date("Y-$mes_fin-d H:i:s");
+// -------------------------------------------------------------------------------------------------------------------
+// Lógica para calcular el tiempo de validez de la membresia.
+$fecha_compra = date("Y-m-d H:i:s");
+// Creamos una variable de tipo objeto DateTime, si no le pasamos parámetros quiere decir que la fecha actual es hoy
+$fecha_actual = date_create();
+/* Añadimos el intervalo de tiempo que necesitamos. Esto se hace con el ID de la membresia ya que está contiene los meses que es valida está misma.
+*/
+date_add($fecha_actual,date_interval_create_from_date_string(''.$id_membresia.' months'));
+// Luego, imprimimos en el formato deseado que necesitemos
+// Y-m-d H:i:s = Year-month-day Hour:m(i)nutes:seconds
+// Y-m-d = Year-month-day
+$fecha_fin = date_format($fecha_actual,"Y-m-d H:i:s");
+//echo $fecha_fin;
+//echo $fecha_compra;
+//exit;
+// -------------------------------------------------------------------------------------------------------------------
 
 session_start();
 include("./backend/conexion.php");
