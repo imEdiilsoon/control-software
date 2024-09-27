@@ -62,6 +62,7 @@ include("../backend/conexion.php");
                         <th class="th1">Sexo</th>
                         <th class="th1">Numero de Telefono</th>
                         <th class="th1">Correo</th>
+                        <th class="th1">Membresia</th>
                         <th class="th1">Peso</th>
                         <th class="th1">Altura</th>
                         <th class="th1">Acción</th>
@@ -73,16 +74,37 @@ include("../backend/conexion.php");
                         echo '<tr><td colspan="8">No hay datos.</td></tr>';
                     } else {
                         $no = 1;
-                        // Iteramos sobre cada usuario y mostramos su información en la tabla
                         while ($row = mysqli_fetch_assoc($sql)) {
+                            $cedula = $row['Cedula'];
+                            $membresia = mysqli_query($conexion, "SELECT membresias.NombreMembresia 
+                                                                  FROM membresia_usuario 
+                                                                  INNER JOIN usuarios ON membresia_usuario.CedulaUsuario = usuarios.Cedula 
+                                                                  INNER JOIN membresias ON membresia_usuario.CodigoMembresia = membresias.CodigoMembresia 
+                                                                  WHERE usuarios.Cedula = '$cedula';"
+                                                                  );
+
+                            if(mysqli_num_rows($membresia) == 0) {
+                                $resultado = "No tiene Membresia.";
+                            } else {
+                                $resultado = mysqli_fetch_assoc($membresia);
+                                $resultado = $resultado['NombreMembresia'];
+                            }
+
+                            if($row['Sexo'] == "F") {
+                              $sexo = 'Femenino';
+                            } elseif($row['Sexo'] == "M") {
+                              $sexo = 'Masculino';
+                            }
+                            
                             echo '
                             <tr class="tr1">
                                 <td>'.$no.'</td>
                                 <td>'.$row['Cedula'].'</td>
                                 <td>'.$row['Nombre'].'</td>
-                                <td>'.$row['Sexo'].'</td>
+                                <td>'.$sexo.'</td>
                                 <td>'.$row['NumeroTelefono'].'</td>
                                 <td>'.$row['Correo'].'</td>
+                                <td>'.$resultado.'</td>
                                 <td>'.$row['Peso'].' kg.</td>
                                 <td>'.$row['Altura'].' cm.</td>
                                 <td style="display: flex; flex-direction: column; gap: 1rem; padding: 5px;">
