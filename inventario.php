@@ -142,6 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar_producto']))
         
         <div id="producto-form" class="hidden">
             <form method="POST" action="">
+                <input type="file" name="imagen_producto" placeholder="imagen del producto" required>
                 <input type="text" name="nombre_producto" placeholder="Nombre del producto" required>
                 <input type="text" name="descripcion_producto" placeholder="Descripción del producto" required>
                 <input type="number" name="precio_producto" placeholder="Precio del producto" required>
