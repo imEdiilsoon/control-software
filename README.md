@@ -1,17 +1,12 @@
-Cuentas: 
 
-  - Usuarios:
+![Logo](https://i.ibb.co/k23Bc1d/IMAGOTIPO-DARK-TRANSPARENT.png)
 
-    correo: edilson@email.com
-    contraseña: edilson123
 
-    correo: maicol@email.com
-    contraseña: maicol123
+## Un Software enfocado en la gestión de un Gimnasio.
 
-    correo: alejandra@email.com
-    contraseña: alejandra123
+Cuenta con control de membresias por tiempo, registro y control de usuarios, entrenadores y más funcionalidades.
+## Lenguajes Utilizados
 
-  - Administrador:
+**FrontEnd:** HTML, CSS, Bootstrap
 
-    correo: ediilson@email.com
-    contraseña: ediilson123
+**BackEnd:** PHP, MySQL
