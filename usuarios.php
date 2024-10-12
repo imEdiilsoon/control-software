@@ -74,7 +74,7 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
         <h3>Entrenadores</h3>
         <p><img src="img/gym.png" alt="Entrenadores"></p>
       </div>
-      <div class="grid-item add-category" onclick="navigateTo('rutina.html')">
+      <div class="grid-item add-category" onclick="navigateTo('rutinas.php')">
         <h3>Generar rutina</h3>
         <p><img src="img/rutinas.jpeg" alt="Generar rutina"></p>
       </div>
