@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+include("./backend/conexion.php");
+
+if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
+	header('location: index.php');
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

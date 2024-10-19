@@ -1,16 +1,44 @@
 <?php
 
 session_start();
+include("./backend/conexion.php");
 
 if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
-	header('location: index.php');
-	exit;
+  header('location: index.php');
+  exit;
+}
+
+$ID = $_SESSION['info']['Cedula'];
+
+$consulta = mysqli_query($conexion, "SELECT membresias.NombreMembresia, membresia_usuario.FechaInicio, membresia_usuario.FechaFin, DATEDIFF(membresia_usuario.FechaFin, CURRENT_DATE()) AS DiasRestantes
+FROM membresia_usuario 
+INNER JOIN usuarios ON membresia_usuario.CedulaUsuario = usuarios.Cedula 
+INNER JOIN membresias ON membresia_usuario.CodigoMembresia = membresias.CodigoMembresia
+WHERE usuarios.Cedula = '$ID' ");
+
+if(mysqli_num_rows($consulta) == 1) {
+    $datos = mysqli_fetch_assoc($consulta);
+  $fecha_actual = date("Y-m-d H:i:s");
+  $fecha_fin_membresia = $datos['FechaFin'];
+
+  $dias_restantes = $datos['DiasRestantes'];
+
+  if($dias_restantes <= 5 ) {
+    echo "<h3>Te quedan: <b style='color: tomato'>$dias_restantes</b> días de la Membresia.</h3>";
+  } elseif($dias_restantes == 1) {
+    echo "<h1>Tú membresia expira hoy. Te invitamos a renovarla y seguir con el Entrenamiento";
+  }
+    
+  if ($fecha_fin_membresia < $fecha_actual) {
+    mysqli_query($conexion, "DELETE FROM membresia_usuario WHERE CedulaUsuario = '$ID'");
+  }
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +52,7 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
       gap: 20px;
       padding: 20px;
     }
+
     .grid-item {
       width: 150px;
       height: 200px;
@@ -37,24 +66,27 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
       transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
       text-align: center;
     }
+
     .grid-item:hover {
       transform: scale(1.05);
       background-color: #0077cc;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
     .grid-item img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
     }
+
     .grid-item h3 {
       margin: 0;
       padding: 5px 0;
       font-size: 16px;
     }
-
-</style>
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Bienvenido, <b><?= ucfirst($_SESSION['info']['Nombre']); ?></b></h1>
@@ -94,7 +126,7 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
     function goBack() {
       window.history.back();
     }
-    
+
     function navigateTo(page) {
       window.location.href = page;
     }
@@ -111,18 +143,19 @@ if (!isset($_SESSION['isLogin']) || !$_SESSION['isLogin']) {
       }
       reader.readAsDataURL(event.target.files[0]);
     }
-   // JavaScript para manejar el evento de clic y alternar el contenido oculto
-document.getElementById('avatar').addEventListener('click', function() {
-  var hiddenContent = document.getElementById('hiddenContent');
-  if (hiddenContent.style.display === 'none') {
-    hiddenContent.style.display = 'block';
-  } else {
-    hiddenContent.style.display = 'none';
-  }
-});
+    // JavaScript para manejar el evento de clic y alternar el contenido oculto
+    document.getElementById('avatar').addEventListener('click', function() {
+      var hiddenContent = document.getElementById('hiddenContent');
+      if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'block';
+      } else {
+        hiddenContent.style.display = 'none';
+      }
+    });
   </script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
+
 </html>
