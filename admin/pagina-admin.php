@@ -83,9 +83,9 @@
               <h3>REGISTRAR ENTRENADOR</h3>
               <p><img src="../img/gym.png" alt="img_user"></p>
             </a>
-            <a href="#" class="grid-item items-click">
-              <h3>ADMINISTRAR PRODUCTOS</h3>
-              <p><img src="../img/productos.png" alt="img_user"></p>
+            <a href="./informes.php" class="grid-item items-click">
+              <h3>GENERACIÓN DE INFORMES</h3>
+              <p><img src="../img/informes.png" alt="img_informes"></p>
             </a>
             <a href="./membresia.php" class="grid-item items-click">
               <h3>ADMINISTRAR MEMBRESIAS</h3>

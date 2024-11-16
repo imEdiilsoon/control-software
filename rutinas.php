@@ -23,6 +23,9 @@ if (isset($_POST['generar'])) {
   } else {
     echo 'error, no funciono.';
   }
+
+  $agg_registro = mysqli_query($conexion, "INSERT INTO objetivos_generados(objetivo, generacion)
+    VALUES('$objetivo', '1')") or die(mysqli_error($conexion));
 }
 
 ?>
