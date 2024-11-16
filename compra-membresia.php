@@ -42,7 +42,11 @@ if (mysqli_num_rows($consulta) == 0) {
 
 if (isset($_POST['comprar'])) {
   $agg_membresia = mysqli_query($conexion, "INSERT INTO membresia_usuario(CedulaUsuario, CodigoMembresia, FechaInicio, FechaFin)
-        VALUES('$cedula', '$id_membresia', '$fecha_compra', '$fecha_fin')") or die(mysqli_error($conexion));
+    VALUES('$cedula', '$id_membresia', '$fecha_compra', '$fecha_fin')") or die(mysqli_error($conexion));
+
+  $agg_registro = mysqli_query($conexion, "INSERT INTO membresias_compradas(id_membresia, compras)
+    VALUES('$id_membresia', '1')") or die(mysqli_error($conexion));
+
   if ($agg_membresia) {
     header("location: ./usuarios.php");
     echo '<div class="notificacion-exito"><p>La información se edito correctamente.</p></div>';

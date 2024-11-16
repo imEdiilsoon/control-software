@@ -110,10 +110,10 @@ if(mysqli_num_rows($consulta) == 1) {
         <h3>Generar rutina</h3>
         <p><img src="img/rutinas.jpeg" alt="Generar rutina"></p>
       </div>
-      <div class="grid-item add-category" onclick="navigateTo('productos.html')">
-        <h3>Productos</h3>
-        <p><img src="img/productos.png" alt="Productos"></p>
-      </div>
+      <!--<div class="grid-item add-category" onclick="navigateTo('productos.html')"> -->
+      <!--  <h3>Productos</h3> -->
+      <!--  <p><img src="img/productos.png" alt="Productos"></p> -->
+      <!--</div> -->
       <div class="grid-item add-category" onclick="navigateTo('./backend/login/cerrar-sesion.php')">
         <h3>Cerrar Sesión</h3>
         <p><img src="img/cerrar-sesion.jpg" alt="Cerrar Sesion"></p>
